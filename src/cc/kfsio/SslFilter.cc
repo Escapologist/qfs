@@ -140,7 +140,7 @@ public:
         // Create ssl cts to ensure that all ssl libs static / globals are
         // properly initialized, to help to avoid any possible races.
         SSL_CTX* const theCtxPtr = SSL_CTX_new(
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10001000L
             TLSv1_method()
 #else
             TLS_method()
